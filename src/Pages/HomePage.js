@@ -3,6 +3,7 @@ import {
   UserOutlined,
   CalendarOutlined,
   BookOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
 import "../App.css";
 import React, { useState, useEffect } from "react";
@@ -11,10 +12,11 @@ import TodoList from "../Components/TodoList";
 import CalendarTodo from "../Components/CalendarTodo";
 import Profile from "../Components/Profile.js";
 import logo from "../images/logo.png";
+import {useAuth} from '../context/authContext'
 
 const { Header, Content, Sider } = Layout;
-
 const HomePage = () => {
+  const {logout} = useAuth()
   useEffect(() => {
     var data = JSON.parse(localStorage.getItem('todos'))
     if (data) {setTodos(data)}else{localStorage.setItem('todos', JSON.stringify(todos))}
@@ -55,6 +57,9 @@ const HomePage = () => {
             </Menu.Item>
             <Menu.Item key="3" icon={<UserOutlined />}>
               <Link to="/profile">Profile</Link>
+            </Menu.Item>
+            <Menu.Item key="4" icon={<LogoutOutlined />}>
+              <span onClick={logout}>Logout</span>
             </Menu.Item>
           </Menu>
         </Sider>
