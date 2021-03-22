@@ -20,7 +20,6 @@ const HomePage = () => {
   useEffect(() => {
     var data = JSON.parse(localStorage.getItem('todos'))
     if (data) {setTodos(data)}else{localStorage.setItem('todos', JSON.stringify(todos))}
-    console.log(data);
   }, [])
   const [collapsed, setCollapsed] = useState(false);
   const [todos, setTodos] = useState([]);

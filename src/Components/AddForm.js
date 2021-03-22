@@ -11,9 +11,9 @@ const AddForm = (props) => {
     setStatus(value);
   }
 
-  function onSearch(val) {
-    console.log("search:", val);
-  }
+  // function onSearch(val) {
+  //   console.log("search:", val);
+  // }
   const titleHandler = (e) => {
     setTitle(e.target.value);
   };
@@ -37,7 +37,7 @@ const AddForm = (props) => {
         placeholder="Select status"
         optionFilterProp="children"
         onChange={onChange}
-        onSearch={onSearch}
+        // onSearch={onSearch}
         filterOption={(input, option) =>
           option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
         }
