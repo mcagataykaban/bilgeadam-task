@@ -90,7 +90,7 @@ const HomePage = () => {
             >
               <Switch>
                 <Route path="/calendar">
-                  <CalendarTodo />
+                  <CalendarTodo todos={todos} />
                 </Route>
                 <Route path="/profile">
                   <Profile />
