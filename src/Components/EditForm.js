@@ -15,13 +15,10 @@ const EditForm = (props) => {
     setEditingContent,
     setEditingStatus,
   } = props;
-  console.log(editingId);
   var editingItem = todos.filter((x) => x.id === editingId)[0];
-  console.log(editingItem);
 
   const editingTitleHandler = (e) => {
     setEditingTitle(e.target.value)
-    console.log(editingTitle);
   }
   const editingContentHandler = (e) => {
       setEditingContent(e.target.value)

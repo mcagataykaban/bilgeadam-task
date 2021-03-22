@@ -5,7 +5,6 @@ import { useAuth } from "./context/authContext";
 
 function App() {
   const { loggedIn } = useAuth();
-  console.log(`loggedIn ${loggedIn}`)
   return (
     <div className="app">
       {loggedIn ? <HomePage /> : <LoginRegister />}

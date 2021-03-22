@@ -7,7 +7,6 @@ const Login = (props) => {
   const { setLoginOrRegister } = props;
   useEffect(() => {
     let user = JSON.parse(localStorage.getItem("user"));
-    console.log(user);
   }, []);
   const {
     login,
