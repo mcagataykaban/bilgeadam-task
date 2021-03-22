@@ -7,7 +7,7 @@ function getListData(value) {
       let todo = todos[i]
       let dayOfTodo = new Date(todos[i]?.date).toLocaleDateString('tr-TR').substring(0,2)
       dayOfTodo = parseInt(dayOfTodo)
-    //   let monthOfTodo = new Date(todos[i]?.date).toLocaleDateString('tr-TR').substring(3,5)
+    //   let monthOfTodo = new Date(todos[i]?.date).toLocaleDateString('tr-TR').substring(3,5);
 
     if (value.date() === dayOfTodo) {
         listData = [
