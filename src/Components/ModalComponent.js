@@ -23,7 +23,6 @@ const ModalComponent = (props) => {
   } = props;
   const handleOk = () => {
     if (editingId !== -1) {
-      console.log(editingId);
       var editedTodo = todos.filter((x) => x.id === editingId)[0];
       editedTodo.title = editingTitle === "" ? editedTodo.title : editingTitle;
       editedTodo.content =
@@ -50,7 +49,6 @@ const ModalComponent = (props) => {
       };
       var newArr2 = todos
       newArr2.push(todo)
-      console.log(newArr2);
       localStorage.setItem('todos', JSON.stringify(newArr2))
       setTodos(newArr2);
       setTitle("");
@@ -60,7 +58,6 @@ const ModalComponent = (props) => {
       
     }
 
-    console.log();
   };
 
   const handleCancel = () => {

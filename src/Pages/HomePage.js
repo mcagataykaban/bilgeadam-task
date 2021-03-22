@@ -18,36 +18,11 @@ const HomePage = () => {
   useEffect(() => {
     var data = JSON.parse(localStorage.getItem('todos'))
     if (data) {setTodos(data)}else{localStorage.setItem('todos', JSON.stringify(todos))}
-
     console.log(data);
   }, [])
   const [collapsed, setCollapsed] = useState(false);
   const [todos, setTodos] = useState([]);
   
-  // [
-  //   {
-  //     id: 1,
-  //     title: "Selam Selam Selam Selam ",
-  //     content:
-  //       "neler yaptın bakalım neler yaptın bakalım neler yaptın bakalım neler yaptın bakalım neler yaptın bakalım neler yaptın bakalım neler yaptın bakalım neler yaptın bakalım?",
-  //     status: 0,
-  //     date: 1615492068,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "haberler ",
-  //     content: "neler yaptın bakalım?",
-  //     status: 1,
-  //     date: 1616191663230,
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "youtube",
-  //     content: "volkan öge, fluTV",
-  //     status: 2,
-  //     date: 1615492068,
-  //   },
-  // ]
   const collapsedToggle = collapsed;
   const toggle = () => {
     setCollapsed(!collapsedToggle);

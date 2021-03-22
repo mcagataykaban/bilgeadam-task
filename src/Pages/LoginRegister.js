@@ -7,14 +7,12 @@ import "./LoginRegister.css";
 const LoginRegister = () => {
   const [loginOrRegister, setLoginOrRegister] = useState(0);
 
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  const [loginRememberMe, setLoginRememberMe] = useState(false);
+  
 
   const [registerUserName, setRegisterUserName] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerRepeatPassword, setRegisterRepeatPassword] = useState("");
-  const [registerRememberMe, setRegisterRememberMe] = useState(false);
+
 
   return (
     <div className="container">
@@ -31,12 +29,6 @@ const LoginRegister = () => {
       </Space>
       {loginOrRegister == 0 ? (
         <Login
-          loginUsername={loginUsername}
-          setLoginUsername={setLoginUsername}
-          loginPassword={loginPassword}
-          setLoginPassword={setLoginPassword}
-          loginRememberMe={loginRememberMe}
-          setLoginRememberMe={setLoginRememberMe}
           setLoginOrRegister={setLoginOrRegister}
         />
       ) : (
@@ -47,8 +39,6 @@ const LoginRegister = () => {
           setRegisterPassword={setRegisterPassword}
           registerRepeatPassword={registerRepeatPassword}
           setRegisterRepeatPassword={setRegisterRepeatPassword}
-          registerRememberMe={registerRememberMe}
-          setRegisterRememberMe={setRegisterRememberMe}
           setLoginOrRegister={setLoginOrRegister}
         />
       )}
