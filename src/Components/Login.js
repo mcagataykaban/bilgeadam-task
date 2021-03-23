@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import { Input, Space, Button, Checkbox } from "antd";
 import "./LoginRegister.css";
 import { useAuth } from "../context/authContext";
+import { useTranslation } from "react-i18next";
 
 const Login = (props) => {
+  const { t, i18 } = useTranslation();
   const { setLoginOrRegister } = props;
   useEffect(() => {
     let user = JSON.parse(localStorage.getItem("user"));
@@ -35,21 +37,21 @@ const Login = (props) => {
         value={loginUsername}
         style={{ width: 250 }}
         size="large"
-        placeholder="Username"
+        placeholder={t("username")}
       />
       <Input.Password
         onChange={passwordHandler}
         value={loginPassword}
         style={{ width: 250 }}
         size="large"
-        placeholder="Password"
+        placeholder={t("password")}
       />
       <Checkbox onChange={rememberHandler} checked={loginRememberMe}>
-        Remember Me
+      {t("rememberMe")}
       </Checkbox>
       <Space direction="horizontal">
         <Button onClick={login} style={{ width: 150 }} type="primary">
-          Login
+          {t("login")}
         </Button>
         <Button
           onClick={() => {
@@ -57,7 +59,7 @@ const Login = (props) => {
           }}
           style={{ width: 90 }}
         >
-          Register
+          {t("register")}
         </Button>
       </Space>
     </Space>

@@ -1,0 +1,16 @@
+{
+    "toDo's": "Yapılacaklar",
+    "calendar": "Takvim",
+    "logout": "Çıkış Yap",
+    "username": "Kullanıcı adı",
+    "password": "Parola",
+    "repeatPassword": "Parola tekrarı",
+    "rememberMe": "Beni Hatırla",
+    "login": "Giriş",
+    "register": "Kayıt Ol",
+    "title": "Başlık",
+    "content": "İçerik",
+    "addForm": "Ekle",
+    "editForm": "Düzenle",
+    "todoList": "Liste"
+}

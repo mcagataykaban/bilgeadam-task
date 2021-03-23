@@ -1,0 +1,16 @@
+{
+    "toDo's": "ToDo's",
+    "calendar": "Calendar",
+    "logout": "Logout",
+    "username": "Username",
+    "password": "Password",
+    "repeatPassword": "Repeat password",
+    "rememberMe": "Remember Me",
+    "login": "Login",
+    "register": "Register",
+    "title": "Title",
+    "content": "Content",
+    "addForm": "Add todo",
+    "editForm": "Edit todo",
+    "todoList": "Todo List"
+}

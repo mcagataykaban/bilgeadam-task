@@ -6,8 +6,11 @@ import {
   PlusOutlined,
 } from "@ant-design/icons";
 import ModalComponent from "./ModalComponent";
+import { useTranslation } from "react-i18next";
+
 
 const TodoList = (props) => {
+  const { t, i18 } = useTranslation();
   const { todos, setTodos } = props;
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [whichModal, setWhichModal] = useState(0);
@@ -44,11 +47,6 @@ const TodoList = (props) => {
     return date.toDateString().substring(4, 10);
   };
 
-  // const editModalHandler = () => {
-  //   setIsModalVisible(true);
-  //   setWhichModal(1);
-  // };
-
   return (
     <>
       <ModalComponent
@@ -61,7 +59,7 @@ const TodoList = (props) => {
               setEditTodo={setEditTodo}
             />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h2>Todo List</h2>
+        <h2>{t("todoList")}</h2>
         <Button onClick={showModalAddForm}>
           <PlusOutlined />
         </Button>

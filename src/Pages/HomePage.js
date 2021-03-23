@@ -1,4 +1,4 @@
-import { Layout, Menu, Avatar, Space } from "antd";
+import { Layout, Menu, Avatar, Space, Button } from "antd";
 import {
   UserOutlined,
   CalendarOutlined,
@@ -12,22 +12,35 @@ import TodoList from "../Components/TodoList";
 import CalendarTodo from "../Components/CalendarTodo";
 import Profile from "../Components/Profile.js";
 import logo from "../images/logo.png";
-import {useAuth} from '../context/authContext'
+import { useAuth } from "../context/authContext";
+import { useTranslation } from "react-i18next";
+import i18n from '../i18n'
 
 const { Header, Content, Sider } = Layout;
 const HomePage = () => {
-  const {logout} = useAuth()
+  const { t, i18 } = useTranslation();
+  const { logout } = useAuth();
   useEffect(() => {
-    var data = JSON.parse(localStorage.getItem('todos'))
-    if (data) {setTodos(data)}else{localStorage.setItem('todos', JSON.stringify(todos))}
-  }, [])
+    var data = JSON.parse(localStorage.getItem("todos"));
+    if (data) {
+      setTodos(data);
+    } else {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+  }, []);
   const [collapsed, setCollapsed] = useState(false);
   const [todos, setTodos] = useState([]);
-  
+
   const collapsedToggle = collapsed;
   const toggle = () => {
     setCollapsed(!collapsedToggle);
   };
+
+  const changeLang = (ln) => {
+    return () => {
+      i18n.changeLanguage(ln)
+    }
+  }
   return (
     <Router>
       <Layout>
@@ -37,28 +50,26 @@ const HomePage = () => {
           collapsed={collapsed}
           onCollapse={toggle}
         >
-          <Space direction="horizontal">
+          {/* <Space direction="horizontal">
             <Avatar
               style={{ margin: 20, marginRight: 4 }}
               size="large"
               icon={<UserOutlined />}
             />
-            <span style={{ color: "white" }}>
-              {!collapsed ? "mcagataykaban" : ""}
-            </span>
-          </Space>
+          </Space> */}
+          <div style={{textAlign: "center", marginTop: 10, marginBottom: 10}}>
+            <Button ghost={true} onClick={changeLang("en")}>EN</Button>
+            <Button ghost={true} onClick={changeLang("tr")}>TR</Button>
+          </div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1" icon={<BookOutlined />}>
-              <Link to="/todos">ToDo's</Link>
+              <Link to="/todos">{t("toDo's")}</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<CalendarOutlined />}>
-              <Link to="/calendar">Calendar</Link>
-            </Menu.Item>
-            <Menu.Item key="3" icon={<UserOutlined />}>
-              <Link to="/profile">Profile</Link>
+              <Link to="/calendar">{t("calendar")}</Link>
             </Menu.Item>
             <Menu.Item key="4" icon={<LogoutOutlined />}>
-              <span onClick={logout}>Logout</span>
+              <span onClick={logout}>{t("logout")}</span>
             </Menu.Item>
           </Menu>
         </Sider>
