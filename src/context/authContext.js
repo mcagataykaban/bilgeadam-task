@@ -54,6 +54,7 @@ const AuthProvider = (props) => {
     setLoginPassword("")
     setLoginRememberMe(false)
     setLoggedIn(false);
+    
   };
   const authContextValue = {
     loginUsername,
