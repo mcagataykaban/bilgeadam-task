@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "antd": "^4.14.0",
     "i18n": "^0.13.2",
+    "i18next": "^20.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.10",
