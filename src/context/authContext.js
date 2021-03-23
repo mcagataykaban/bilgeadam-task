@@ -50,6 +50,9 @@ const AuthProvider = (props) => {
       };
       localStorage.setItem("user", JSON.stringify(newUser));
     }
+    setLoginUsername("")
+    setLoginPassword("")
+    setLoginRememberMe(false)
     setLoggedIn(false);
   };
   const authContextValue = {
